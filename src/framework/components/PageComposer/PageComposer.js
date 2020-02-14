@@ -9,10 +9,7 @@ import NotFoundComponent from '../NotFoundComponent';
 import * as mouseOverBoundaries from './mouseOverBoundaries';
 import * as selectedBoundaries from './selectedBoundaries';
 
-let constants;
-if (process.env.NODE_ENV !== 'production') {
-  constants = require('../../commons/constants');
-}
+const constants = require('../../commons/constants');
 
 function sendMessage(message) {
   if (message) {

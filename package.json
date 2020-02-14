@@ -33,7 +33,7 @@
     "extends": "react-app"
   },
   "wcd": {
-    "appMode": "release"
+    "appMode": "demo"
   },
   "browserslist": {
     "production": [

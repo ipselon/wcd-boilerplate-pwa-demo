@@ -1,4 +1,6 @@
 import cloneDeep from 'lodash/cloneDeep';
+import isArray from 'lodash/isArray';
+import isObject from 'lodash/isObject';
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -6,11 +8,35 @@ import { createStructuredSelector } from 'reselect';
 import createContainerSelector from '../../store/selectors';
 import createContainerActions from '../../store/actions';
 
-let sendDebugMessage;
-let constants;
-if (process.env.NODE_ENV !== 'production') {
-  sendDebugMessage = require('../../commons/sendMessage').default;
-  constants = require('../../commons/constants');
+const sendDebugMessage = require('../../commons/sendMessage').default;
+const constants = require('../../commons/constants');
+
+export function pickReactElements(obj2) {
+  let obj1 = undefined;
+  if (React.isValidElement(obj2)){
+    obj1 = obj2;
+  } else if (isArray(obj2)) {
+    let arrayItem;
+    for (let i = 0; i < obj2.length; i++) {
+      arrayItem = pickReactElements(obj2[i]);
+      if (arrayItem) {
+        obj1 = obj1 || [];
+        obj1.push(arrayItem);
+      }
+    }
+  } else if (isObject(obj2)) {
+    let objectField;
+    for (let item in obj2) {
+      if (obj2.hasOwnProperty(item)) {
+        objectField = pickReactElements(obj2[item]);
+        if (objectField) {
+          obj1 = obj1 || {};
+          obj1[item] = objectField;
+        }
+      }
+    }
+  }
+  return obj1;
 }
 
 class Container extends React.Component {
@@ -29,18 +55,16 @@ class Container extends React.Component {
           const args = arguments;
           const handlerAction = actions[eventHandler.name];
           if (handlerAction) {
-            if (process.env.NODE_ENV !== 'production') {
-              if (window.__webcodeskIsListeningToFramework && window.__sendFrameworkMessage) {
-                sendDebugMessage({
-                  key: componentKey,
-                  eventType: constants.DEBUG_MSG_COMPONENT_FIRE_EVENT,
-                  eventName: eventHandler.name,
-                  outputData: args && args.length > 0 ? cloneDeep(args[0]) : undefined,
-                  componentName,
-                  componentInstance,
-                  timestamp: Date.now(),
-                });
-              }
+            if (window.__webcodeskIsListeningToFramework && window.__sendFrameworkMessage) {
+              sendDebugMessage({
+                key: componentKey,
+                eventType: constants.DEBUG_MSG_COMPONENT_FIRE_EVENT,
+                eventName: eventHandler.name,
+                outputData: args && args.length > 0 ? cloneDeep(args[0]) : undefined,
+                componentName,
+                componentInstance,
+                timestamp: Date.now(),
+              });
             }
             handlerAction.apply(null, [args[0], args[1]]);
           } else {
@@ -54,19 +78,17 @@ class Container extends React.Component {
   }
 
   shouldComponentUpdate (nextProps, nextState, nextContext) {
-    if (process.env.NODE_ENV !== 'production') {
-      if (nextProps.stateProps !== this.props.stateProps) {
-        if (window.__webcodeskIsListeningToFramework && window.__sendFrameworkMessage) {
-          const { componentName, componentInstance, componentKey } = this.props;
-          sendDebugMessage({
-            key: componentKey,
-            eventType: constants.DEBUG_MSG_NEW_PROPS_EVENT,
-            inputData: cloneDeep(nextProps.stateProps),
-            componentName,
-            componentInstance,
-            timestamp: Date.now(),
-          });
-        }
+    if (nextProps.stateProps !== this.props.stateProps) {
+      if (window.__webcodeskIsListeningToFramework && window.__sendFrameworkMessage) {
+        const { componentName, componentInstance, componentKey } = this.props;
+        sendDebugMessage({
+          key: componentKey,
+          eventType: constants.DEBUG_MSG_NEW_PROPS_EVENT,
+          inputData: cloneDeep(nextProps.stateProps),
+          componentName,
+          componentInstance,
+          timestamp: Date.now(),
+        });
       }
     }
     return true;
@@ -79,11 +101,10 @@ class Container extends React.Component {
       stateProps,
       children
     } = this.props;
-    console.info('Wrapped props: ', wrappedProps);
-    console.info('State props: ', stateProps);
+    const elementsProps = pickReactElements(wrappedProps) || {};
     return React.createElement(
       wrappedComponent,
-      { ...wrappedProps, ...this.wrappedHandlers, ...stateProps },
+      { ...wrappedProps, ...this.wrappedHandlers, ...stateProps,  ...elementsProps},
       children
     );
   }

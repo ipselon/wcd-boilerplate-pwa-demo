@@ -7,10 +7,7 @@ import ComponentWrapper from './ComponentWrapper';
 import NotFoundComponent from '../NotFoundComponent';
 import Placeholder from './Placeholder';
 
-let constants;
-if (process.env.NODE_ENV !== 'production') {
-  constants = require('../../commons/constants');
-}
+const constants = require('../../commons/constants');
 
 // ToDo: remove once the WebpackDevServer fixes HMR - it should preserve React components state (now it does not)
 // https://github.com/webpack/webpack-dev-server/issues/1377
@@ -24,16 +21,14 @@ function sendMessage(message) {
 }
 
 const handleComponentEvent = (eventName) => (args) => {
-  if (process.env.NODE_ENV !== 'production') {
-    sendMessage({
-      type: constants.FRAMEWORK_MESSAGE_COMPONENT_EVENT,
-      payload: {
-        eventName,
-        args,
-        timestamp: Date.now(),
-      }
-    });
-  }
+  sendMessage({
+    type: constants.FRAMEWORK_MESSAGE_COMPONENT_EVENT,
+    payload: {
+      eventName,
+      args,
+      timestamp: Date.now(),
+    }
+  });
 };
 
 const renderComponent = (userComponents, description, rootProps) => {

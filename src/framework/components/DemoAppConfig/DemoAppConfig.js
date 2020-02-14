@@ -1,5 +1,6 @@
 import React from 'react';
 import { get } from './appDemoRestClient';
+const constants = require('../../commons/constants');
 
 class DemoAppConfig extends React.Component {
 
@@ -16,7 +17,7 @@ class DemoAppConfig extends React.Component {
     if (message) {
       const {type} = message;
       console.info('Demo App received message: ', type);
-      if (type === 'getDeclarationFilesWithEtcFiles') {
+      if (type === constants.WEBCODESK_MESSAGE_GET_DECLARATIONS_WITH_ETC) {
         const result = {};
         get('/etcFiles.json')
           .then(data => {
@@ -26,7 +27,7 @@ class DemoAppConfig extends React.Component {
           .then(data => {
             result.declarationFiles = data;
             window.parent.postMessage({
-              type: 'declarationFilesWithEtcFiles',
+              type: constants.FRAMEWORK_MESSAGE_DECLARATIONS_WITH_ETC,
               payload: result,
             }, '*');
           })
@@ -37,13 +38,13 @@ class DemoAppConfig extends React.Component {
             }, '*');
             console.error(error);
           });
-      } else if (type === 'getDeclarationFiles') {
+      } else if (type === constants.WEBCODESK_MESSAGE_GET_DECLARATIONS) {
         const result = {};
         get('/declarationFiles.json')
           .then(data => {
             result.declarationFiles = data;
             window.parent.postMessage({
-              type: 'declarationFiles',
+              type: constants.FRAMEWORK_MESSAGE_DECLARATIONS,
               payload: result,
             }, '*');
           })

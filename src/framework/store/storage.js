@@ -49,21 +49,3 @@ export async function getSettings() {
 export async function saveSettings(settings) {
   return getStorageInstance().setItem('settings', settings);
 }
-
-// export async function setRecordOfComponentPropsKeys(projectKey, expandedResourcesKeys) {
-//   return getStorageInstance().getItem(STORAGE_RECORD_EXPANDED_COMPONENT_PROPS_KEYS)
-//     .then(recordOfExpandedKeys => {
-//       recordOfExpandedKeys = recordOfExpandedKeys || {};
-//       recordOfExpandedKeys[projectKey] = expandedResourcesKeys;
-//       return getStorageInstance().setItem(STORAGE_RECORD_EXPANDED_COMPONENT_PROPS_KEYS, recordOfExpandedKeys);
-//     });
-// }
-//
-// export async function getRecordOfComponentPropsKeys(projectKey) {
-//   return getStorageInstance().getItem(STORAGE_RECORD_EXPANDED_COMPONENT_PROPS_KEYS)
-//     .then(recordOfExpandedKeys => {
-//       recordOfExpandedKeys = recordOfExpandedKeys || {};
-//       return recordOfExpandedKeys[projectKey]
-//     });
-// }
-

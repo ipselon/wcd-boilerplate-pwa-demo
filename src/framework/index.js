@@ -12,35 +12,28 @@ import StartWrapper from './components/StartWrapper';
 import WarningComponent from './components/WarningComponent';
 import DemoAppConfig from './components/DemoAppConfig';
 
-let constants;
-let ComponentComposer;
-let PageComposer;
-if (process.env.NODE_ENV !== 'production') {
-  constants = require('./commons/constants');
-  ComponentComposer = require('./components/ComponentComposer/ComponentComposer').default;
-  PageComposer = require('./components/PageComposer/PageComposer').default;
-}
+const constants = require('./commons/constants');
+const ComponentComposer = require('./components/ComponentComposer/ComponentComposer').default;
+const PageComposer = require('./components/PageComposer/PageComposer').default;
 
 const initStore = (pages, name, version) => {
   const initialState = createInitialState(pages);
   const history = createBrowserHistory();
   const store = configureStore(initialState, { history }, { name, version });
 
-  if (process.env.NODE_ENV !== 'production') {
-    window.__sendFrameworkMessage = (message) => {
-      if (message) {
-        window.parent.postMessage(message, '*');
-      }
-    };
-    // Listen for changes to the current location.
-    history.listen((location) => {
-      // location is an object like window.location
-      window.__sendFrameworkMessage({
-        type: constants.FRAMEWORK_MESSAGE_CHANGE_URL,
-        payload: `${location.pathname}${location.search}${location.hash}`,
-      });
+  window.__sendFrameworkMessage = (message) => {
+    if (message) {
+      window.parent.postMessage(message, '*');
+    }
+  };
+  // Listen for changes to the current location.
+  history.listen((location) => {
+    // location is an object like window.location
+    window.__sendFrameworkMessage({
+      type: constants.FRAMEWORK_MESSAGE_CHANGE_URL,
+      payload: `${location.pathname}${location.search}${location.hash}`,
     });
-  }
+  });
 
   return {store, history};
 };
@@ -69,22 +62,17 @@ export function getDemoFiles({schema, settings}) {
 class Application extends React.Component {
 
   componentDidMount () {
-    if (process.env.NODE_ENV !== 'production') {
-      window.addEventListener("message", this.handleReceiveMessage, false);
-    }
+    window.addEventListener("message", this.handleReceiveMessage, false);
   }
 
   componentWillUnmount () {
-    if (process.env.NODE_ENV !== 'production') {
-      window.removeEventListener("message", this.handleReceiveMessage);
-    }
+    window.removeEventListener("message", this.handleReceiveMessage);
   }
 
   handleReceiveMessage = (event) => {
-    if (process.env.NODE_ENV !== 'production') {
       const {data: message} = event;
       if (message) {
-        const { type } = message;
+        const { type, payload } = message;
         if (type === constants.WEBCODESK_MESSAGE_START_LISTENING_TO_FRAMEWORK) {
           window.__webcodeskIsListeningToFramework = true;
           setTimeout(() => {
@@ -97,49 +85,39 @@ class Application extends React.Component {
           }, 0);
         } else if (type === constants.WEBCODESK_MESSAGE_STOP_LISTENING_TO_FRAMEWORK) {
           window.__webcodeskIsListeningToFramework = false;
+        } else if (type === constants.WEBCODESK_MESSAGE_SAVE_DEMO_FILES && payload) {
+          const {schema, settings} = payload;
+          saveSchema(schema)
+            .then(() => {
+              return saveSettings(settings);
+            })
+            .then(() => {
+              window.__sendFrameworkMessage({
+                type: constants.FRAMEWORK_MESSAGE_DEMO_FILES_SAVED,
+              });
+            })
+            .catch((error) => {
+              console.error(error.message);
+              window.__sendFrameworkMessage({
+                type: constants.FRAMEWORK_MESSAGE_DEMO_FILES_SAVED,
+              });
+            });
         }
       }
-    }
-    const {data: message} = event;
-    if (message) {
-      console.info('Index receive message: ', message);
-      const { type, payload } = message;
-      if (type === 'saveDemoFiles' && payload) {
-        const {schema, settings} = payload;
-        saveSchema(schema)
-          .then(() => {
-            return saveSettings(settings);
-          })
-          .then(() => {
-            window.__sendFrameworkMessage({
-              type: 'demoFilesSaved',
-            });
-          })
-          .catch((error) => {
-            console.error(error.message);
-            window.__sendFrameworkMessage({
-              type: 'demoFilesSaved',
-            });
-          });
-      }
-    }
   };
 
   render () {
     const { userComponents } = this.props;
     const href = window.location.href;
-    if (process.env.NODE_ENV !== 'production') {
-      if (href.indexOf('/webcodesk__component_view') > 0) {
-        return (
-          <ComponentComposer userComponents={userComponents} />
-        );
-      } else if(href.indexOf('/webcodesk__page_composer') > 0) {
-        return (
-          <PageComposer userComponents={userComponents} />
-        )
-      }
-    }
-    if(href.indexOf('/webcodesk__demo_app_config') > 0) {
+    if (href.indexOf('/webcodesk__component_view') > 0) {
+      return (
+        <ComponentComposer userComponents={userComponents} />
+      );
+    } else if(href.indexOf('/webcodesk__page_composer') > 0) {
+      return (
+        <PageComposer userComponents={userComponents} />
+      )
+    } else if(href.indexOf('/webcodesk__demo_app_config') > 0) {
       return (
         <DemoAppConfig />
       )

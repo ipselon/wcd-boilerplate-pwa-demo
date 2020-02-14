@@ -106,25 +106,25 @@ class PageFrameWithDrawer extends React.Component {
   };
 
   handleDrawerOpenClick = (e) => {
-    if (e) {
-      e.stopPropagation();
-      e.preventDefault();
-    }
-    const { onToggleDrawer } = this.props;
-    if (onToggleDrawer) {
-      onToggleDrawer();
-    }
+    // if (e) {
+    //   e.stopPropagation();
+    //   e.preventDefault();
+    // }
+    // const { onToggleDrawer } = this.props;
+    // if (onToggleDrawer) {
+    //   onToggleDrawer();
+    // }
   };
 
   handleDrawerCloseClick = (e) => {
-    if (e) {
-      e.stopPropagation();
-      e.preventDefault();
-    }
-    const { onToggleDrawer } = this.props;
-    if (onToggleDrawer) {
-      onToggleDrawer();
-    }
+    // if (e) {
+    //   e.stopPropagation();
+    //   e.preventDefault();
+    // }
+    // const { onToggleDrawer } = this.props;
+    // if (onToggleDrawer) {
+    //   onToggleDrawer();
+    // }
   };
 
   render () {

@@ -6,5 +6,5 @@ export default {
   flows,
   pages,
   routes,
-  appMode: 'release', 
+  appMode: 'demo', 
 };

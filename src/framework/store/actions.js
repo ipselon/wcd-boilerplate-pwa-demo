@@ -3,12 +3,8 @@ import forOwn from 'lodash/forOwn';
 import { COMPONENT_TYPE, USER_FUNCTION_TYPE, DISPATCH_ERROR_TYPE} from './constants';
 import { getUserFunctionByName } from './sequences';
 
-let sendDebugMessage;
-let constants;
-if (process.env.NODE_ENV !== 'production') {
-  sendDebugMessage = require('../commons/sendMessage').default;
-  constants = require('../commons/constants');
-}
+const sendDebugMessage = require('../commons/sendMessage').default;
+const constants = require('../commons/constants');
 
 function dispatchToComponent (props, payload, dispatch) {
   if (props) {
@@ -16,17 +12,15 @@ function dispatchToComponent (props, payload, dispatch) {
       componentName, componentInstance, componentKey
     } = props;
     const targetKey = `${componentName}_${componentInstance}`;
-    if (process.env.NODE_ENV !== 'production') {
-      if (window.__webcodeskIsListeningToFramework && window.__sendFrameworkMessage) {
-        sendDebugMessage({
-          key: componentKey,
-          eventType: constants.DEBUG_MSG_REDUCE_DATA_EVENT,
-          inputData: cloneDeep(payload),
-          componentName,
-          componentInstance,
-          timestamp: Date.now(),
-        });
-      }
+    if (window.__webcodeskIsListeningToFramework && window.__sendFrameworkMessage) {
+      sendDebugMessage({
+        key: componentKey,
+        eventType: constants.DEBUG_MSG_REDUCE_DATA_EVENT,
+        inputData: cloneDeep(payload),
+        componentName,
+        componentInstance,
+        timestamp: Date.now(),
+      });
     }
     dispatch({ type: targetKey, payload });
   }
@@ -56,17 +50,15 @@ function executeUserFunctionDispatch (
       const eventTargets = findEventTargets(events, dispatchType);
       if (eventTargets && eventTargets.length > 0) {
         payload = dispatchPayloads[dispatchType];
-        if (process.env.NODE_ENV !== 'production') {
-          if (window.__webcodeskIsListeningToFramework && window.__sendFrameworkMessage) {
-            sendDebugMessage({
-              key: functionKey,
-              eventType: constants.DEBUG_MSG_FUNCTION_FIRE_EVENT,
-              eventName: dispatchType,
-              outputData: cloneDeep(payload),
-              functionName: functionName,
-              timestamp: Date.now(),
-            });
-          }
+        if (window.__webcodeskIsListeningToFramework && window.__sendFrameworkMessage) {
+          sendDebugMessage({
+            key: functionKey,
+            eventType: constants.DEBUG_MSG_FUNCTION_FIRE_EVENT,
+            eventName: dispatchType,
+            outputData: cloneDeep(payload),
+            functionName: functionName,
+            timestamp: Date.now(),
+          });
         }
         eventTargets.forEach(eventTarget => {
           const { type: eventTargetType, props: eventTargetProps } = eventTarget;
@@ -162,16 +154,14 @@ function createTasks (targets) {
                 try {
                   const firstArgument = args[0];
                   // execute user function with passed in args
-                  if (process.env.NODE_ENV !== 'production') {
-                    if (window.__webcodeskIsListeningToFramework && window.__sendFrameworkMessage) {
-                      sendDebugMessage({
-                        key: props.functionKey,
-                        eventType: constants.DEBUG_MSG_FUNCTION_CALL_EVENT,
-                        inputData: cloneDeep(firstArgument),
-                        functionName: props.functionName,
-                        timestamp: Date.now(),
-                      });
-                    }
+                  if (window.__webcodeskIsListeningToFramework && window.__sendFrameworkMessage) {
+                    sendDebugMessage({
+                      key: props.functionKey,
+                      eventType: constants.DEBUG_MSG_FUNCTION_CALL_EVENT,
+                      inputData: cloneDeep(firstArgument),
+                      functionName: props.functionName,
+                      timestamp: Date.now(),
+                    });
                   }
 
                   let stateByDispatch;

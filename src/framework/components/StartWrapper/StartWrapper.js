@@ -7,12 +7,8 @@ const componentName = 'applicationStartWrapper';
 const componentInstance = 'wrapperInstance';
 const containerKey = `${componentName}_${componentInstance}`;
 
-let sendDebugMessage;
-let constants;
-if (process.env.NODE_ENV !== 'production') {
-  sendDebugMessage = require('../../commons/sendMessage').default;
-  constants = require('../../commons/constants');
-}
+const sendDebugMessage = require('../../commons/sendMessage').default;
+const constants = require('../../commons/constants');
 
 class StartWrapper extends React.Component {
   static propTypes = {
@@ -33,16 +29,14 @@ class StartWrapper extends React.Component {
       const actions = createContainerActions(containerKey, containerHandlers);
       const onDidMountAction = actions['onApplicationStart'];
       if (onDidMountAction) {
-        if (process.env.NODE_ENV !== 'production') {
-          if (window.__webcodeskIsListeningToFramework && window.__sendFrameworkMessage) {
-            sendDebugMessage({
-              key: componentKey,
-              eventType: constants.DEBUG_MSG_APPLICATION_START_EVENT,
-              componentName,
-              componentInstance,
-              timestamp: Date.now(),
-            });
-          }
+        if (window.__webcodeskIsListeningToFramework && window.__sendFrameworkMessage) {
+          sendDebugMessage({
+            key: componentKey,
+            eventType: constants.DEBUG_MSG_APPLICATION_START_EVENT,
+            componentName,
+            componentInstance,
+            timestamp: Date.now(),
+          });
         }
         store.dispatch(onDidMountAction.apply(null, null));
       }
