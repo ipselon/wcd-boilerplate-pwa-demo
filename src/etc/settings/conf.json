@@ -1,0 +1,1500 @@
+{
+  "model": [
+    {
+      "key": "node2",
+      "type": "COMPONENT_PROPERTY_SHAPE_TYPE",
+      "props": {
+        "propertyName": "firebase"
+      },
+      "index": 0,
+      "children": [
+        {
+          "key": "node3",
+          "type": "COMPONENT_PROPERTY_OBJECT_TYPE",
+          "props": {
+            "propertyName": "firebaseConfig",
+            "propertyValue": {
+              "apiKey": "AIzaSyDlGYTutXuyhxjQcRonUQ2dAC5xZYkTsYE",
+              "authDomain": "wcd-boilerplate-pwa.firebaseapp.com",
+              "databaseURL": "https://wcd-boilerplate-pwa.firebaseio.com",
+              "projectId": "wcd-boilerplate-pwa",
+              "storageBucket": "wcd-boilerplate-pwa.appspot.com",
+              "messagingSenderId": "1026093086570",
+              "appId": "1:1026093086570:web:b378a16ecb4d3d424e9713"
+            }
+          },
+          "index": 0
+        }
+      ]
+    },
+    {
+      "key": "node7",
+      "type": "COMPONENT_PROPERTY_SHAPE_TYPE",
+      "props": {
+        "propertyName": "muiTheme"
+      },
+      "index": 1,
+      "children": [
+        {
+          "key": "node8",
+          "type": "COMPONENT_PROPERTY_SHAPE_TYPE",
+          "props": {
+            "propertyName": "breakpoints"
+          },
+          "index": 0,
+          "children": [
+            {
+              "key": "node9",
+              "type": "COMPONENT_PROPERTY_SHAPE_TYPE",
+              "props": {
+                "propertyName": "values"
+              },
+              "index": 0,
+              "children": [
+                {
+                  "key": "node10",
+                  "type": "COMPONENT_PROPERTY_NUMBER_TYPE",
+                  "props": {
+                    "propertyName": "lg",
+                    "propertyValue": 1280
+                  },
+                  "index": 0
+                },
+                {
+                  "key": "node11",
+                  "type": "COMPONENT_PROPERTY_NUMBER_TYPE",
+                  "props": {
+                    "propertyName": "md",
+                    "propertyValue": 960
+                  },
+                  "index": 1
+                },
+                {
+                  "key": "node12",
+                  "type": "COMPONENT_PROPERTY_NUMBER_TYPE",
+                  "props": {
+                    "propertyName": "sm",
+                    "propertyValue": 600
+                  },
+                  "index": 2
+                },
+                {
+                  "key": "node13",
+                  "type": "COMPONENT_PROPERTY_NUMBER_TYPE",
+                  "props": {
+                    "propertyName": "xl",
+                    "propertyValue": 1920
+                  },
+                  "index": 3
+                },
+                {
+                  "key": "node14",
+                  "type": "COMPONENT_PROPERTY_NUMBER_TYPE",
+                  "props": {
+                    "propertyName": "xs",
+                    "propertyValue": 0
+                  },
+                  "index": 4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "node15",
+          "type": "COMPONENT_PROPERTY_SHAPE_TYPE",
+          "props": {
+            "propertyName": "palette"
+          },
+          "index": 1,
+          "children": [
+            {
+              "key": "node16",
+              "type": "COMPONENT_PROPERTY_SHAPE_TYPE",
+              "props": {
+                "propertyName": "error"
+              },
+              "index": 0,
+              "children": [
+                {
+                  "key": "node17",
+                  "type": "COMPONENT_PROPERTY_STRING_TYPE",
+                  "props": {
+                    "propertyName": "contrastText",
+                    "propertyValue": "#fff"
+                  },
+                  "index": 0
+                },
+                {
+                  "key": "node18",
+                  "type": "COMPONENT_PROPERTY_SHAPE_TYPE",
+                  "props": {
+                    "propertyName": "dark"
+                  },
+                  "index": 1,
+                  "children": [
+                    {
+                      "key": "node19",
+                      "type": "COMPONENT_PROPERTY_ONE_OF_TYPE",
+                      "props": {
+                        "propertyName": "colorHue",
+                        "propertyComment": "A value from the collection of colors, i.e. hues",
+                        "propertyValue": "indigo",
+                        "propertyValueVariants": [
+                          {
+                            "value": "red"
+                          },
+                          {
+                            "value": "pink"
+                          },
+                          {
+                            "value": "purple"
+                          },
+                          {
+                            "value": "deepPurple"
+                          },
+                          {
+                            "value": "indigo"
+                          },
+                          {
+                            "value": "blue"
+                          },
+                          {
+                            "value": "lightBlue"
+                          },
+                          {
+                            "value": "cyan"
+                          },
+                          {
+                            "value": "teal"
+                          },
+                          {
+                            "value": "green"
+                          },
+                          {
+                            "value": "lightGreen"
+                          },
+                          {
+                            "value": "lime"
+                          },
+                          {
+                            "value": "yellow"
+                          },
+                          {
+                            "value": "amber"
+                          },
+                          {
+                            "value": "orange"
+                          },
+                          {
+                            "value": "deepOrange"
+                          },
+                          {
+                            "value": "brown"
+                          },
+                          {
+                            "value": "grey"
+                          },
+                          {
+                            "value": "blueGrey"
+                          }
+                        ],
+                        "errors": {}
+                      },
+                      "index": 0
+                    },
+                    {
+                      "key": "node20",
+                      "type": "COMPONENT_PROPERTY_ONE_OF_TYPE",
+                      "props": {
+                        "propertyName": "colorShade",
+                        "propertyComment": "A value from the collection of colors shades",
+                        "propertyValue": "700",
+                        "propertyValueVariants": [
+                          {
+                            "value": "50"
+                          },
+                          {
+                            "value": "100"
+                          },
+                          {
+                            "value": "200"
+                          },
+                          {
+                            "value": "300"
+                          },
+                          {
+                            "value": "400"
+                          },
+                          {
+                            "value": "500"
+                          },
+                          {
+                            "value": "600"
+                          },
+                          {
+                            "value": "700"
+                          },
+                          {
+                            "value": "800"
+                          },
+                          {
+                            "value": "900"
+                          },
+                          {
+                            "value": "A100"
+                          },
+                          {
+                            "value": "A200"
+                          },
+                          {
+                            "value": "A400"
+                          },
+                          {
+                            "value": "A700"
+                          }
+                        ],
+                        "errors": {}
+                      },
+                      "index": 1
+                    }
+                  ]
+                },
+                {
+                  "key": "node21",
+                  "type": "COMPONENT_PROPERTY_SHAPE_TYPE",
+                  "props": {
+                    "propertyName": "light"
+                  },
+                  "index": 2,
+                  "children": [
+                    {
+                      "key": "node22",
+                      "type": "COMPONENT_PROPERTY_ONE_OF_TYPE",
+                      "props": {
+                        "propertyName": "colorHue",
+                        "propertyComment": "A value from the collection of colors, i.e. hues",
+                        "propertyValue": "red",
+                        "propertyValueVariants": [
+                          {
+                            "value": "red"
+                          },
+                          {
+                            "value": "pink"
+                          },
+                          {
+                            "value": "purple"
+                          },
+                          {
+                            "value": "deepPurple"
+                          },
+                          {
+                            "value": "indigo"
+                          },
+                          {
+                            "value": "blue"
+                          },
+                          {
+                            "value": "lightBlue"
+                          },
+                          {
+                            "value": "cyan"
+                          },
+                          {
+                            "value": "teal"
+                          },
+                          {
+                            "value": "green"
+                          },
+                          {
+                            "value": "lightGreen"
+                          },
+                          {
+                            "value": "lime"
+                          },
+                          {
+                            "value": "yellow"
+                          },
+                          {
+                            "value": "amber"
+                          },
+                          {
+                            "value": "orange"
+                          },
+                          {
+                            "value": "deepOrange"
+                          },
+                          {
+                            "value": "brown"
+                          },
+                          {
+                            "value": "grey"
+                          },
+                          {
+                            "value": "blueGrey"
+                          }
+                        ],
+                        "errors": {}
+                      },
+                      "index": 0
+                    },
+                    {
+                      "key": "node23",
+                      "type": "COMPONENT_PROPERTY_ONE_OF_TYPE",
+                      "props": {
+                        "propertyName": "colorShade",
+                        "propertyComment": "A value from the collection of colors shades",
+                        "propertyValue": "300",
+                        "propertyValueVariants": [
+                          {
+                            "value": "50"
+                          },
+                          {
+                            "value": "100"
+                          },
+                          {
+                            "value": "200"
+                          },
+                          {
+                            "value": "300"
+                          },
+                          {
+                            "value": "400"
+                          },
+                          {
+                            "value": "500"
+                          },
+                          {
+                            "value": "600"
+                          },
+                          {
+                            "value": "700"
+                          },
+                          {
+                            "value": "800"
+                          },
+                          {
+                            "value": "900"
+                          },
+                          {
+                            "value": "A100"
+                          },
+                          {
+                            "value": "A200"
+                          },
+                          {
+                            "value": "A400"
+                          },
+                          {
+                            "value": "A700"
+                          }
+                        ],
+                        "errors": {}
+                      },
+                      "index": 1
+                    }
+                  ]
+                },
+                {
+                  "key": "node24",
+                  "type": "COMPONENT_PROPERTY_SHAPE_TYPE",
+                  "props": {
+                    "propertyName": "main"
+                  },
+                  "index": 3,
+                  "children": [
+                    {
+                      "key": "node25",
+                      "type": "COMPONENT_PROPERTY_ONE_OF_TYPE",
+                      "props": {
+                        "propertyName": "colorHue",
+                        "propertyComment": "A value from the collection of colors, i.e. hues",
+                        "propertyValue": "red",
+                        "propertyValueVariants": [
+                          {
+                            "value": "red"
+                          },
+                          {
+                            "value": "pink"
+                          },
+                          {
+                            "value": "purple"
+                          },
+                          {
+                            "value": "deepPurple"
+                          },
+                          {
+                            "value": "indigo"
+                          },
+                          {
+                            "value": "blue"
+                          },
+                          {
+                            "value": "lightBlue"
+                          },
+                          {
+                            "value": "cyan"
+                          },
+                          {
+                            "value": "teal"
+                          },
+                          {
+                            "value": "green"
+                          },
+                          {
+                            "value": "lightGreen"
+                          },
+                          {
+                            "value": "lime"
+                          },
+                          {
+                            "value": "yellow"
+                          },
+                          {
+                            "value": "amber"
+                          },
+                          {
+                            "value": "orange"
+                          },
+                          {
+                            "value": "deepOrange"
+                          },
+                          {
+                            "value": "brown"
+                          },
+                          {
+                            "value": "grey"
+                          },
+                          {
+                            "value": "blueGrey"
+                          }
+                        ],
+                        "errors": {}
+                      },
+                      "index": 0
+                    },
+                    {
+                      "key": "node26",
+                      "type": "COMPONENT_PROPERTY_ONE_OF_TYPE",
+                      "props": {
+                        "propertyName": "colorShade",
+                        "propertyComment": "A value from the collection of colors shades",
+                        "propertyValue": "500",
+                        "propertyValueVariants": [
+                          {
+                            "value": "50"
+                          },
+                          {
+                            "value": "100"
+                          },
+                          {
+                            "value": "200"
+                          },
+                          {
+                            "value": "300"
+                          },
+                          {
+                            "value": "400"
+                          },
+                          {
+                            "value": "500"
+                          },
+                          {
+                            "value": "600"
+                          },
+                          {
+                            "value": "700"
+                          },
+                          {
+                            "value": "800"
+                          },
+                          {
+                            "value": "900"
+                          },
+                          {
+                            "value": "A100"
+                          },
+                          {
+                            "value": "A200"
+                          },
+                          {
+                            "value": "A400"
+                          },
+                          {
+                            "value": "A700"
+                          }
+                        ],
+                        "errors": {}
+                      },
+                      "index": 1
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "key": "node27",
+              "type": "COMPONENT_PROPERTY_SHAPE_TYPE",
+              "props": {
+                "propertyName": "primary",
+                "propertyComment": "Primary"
+              },
+              "index": 1,
+              "children": [
+                {
+                  "key": "node28",
+                  "type": "COMPONENT_PROPERTY_STRING_TYPE",
+                  "props": {
+                    "propertyName": "contrastText",
+                    "propertyValue": "#fff"
+                  },
+                  "index": 0
+                },
+                {
+                  "key": "node29",
+                  "type": "COMPONENT_PROPERTY_SHAPE_TYPE",
+                  "props": {
+                    "propertyName": "dark"
+                  },
+                  "index": 1,
+                  "children": [
+                    {
+                      "key": "node30",
+                      "type": "COMPONENT_PROPERTY_ONE_OF_TYPE",
+                      "props": {
+                        "propertyName": "colorHue",
+                        "propertyComment": "A value from the collection of colors, i.e. hues",
+                        "propertyValue": "indigo",
+                        "propertyValueVariants": [
+                          {
+                            "value": "red"
+                          },
+                          {
+                            "value": "pink"
+                          },
+                          {
+                            "value": "purple"
+                          },
+                          {
+                            "value": "deepPurple"
+                          },
+                          {
+                            "value": "indigo"
+                          },
+                          {
+                            "value": "blue"
+                          },
+                          {
+                            "value": "lightBlue"
+                          },
+                          {
+                            "value": "cyan"
+                          },
+                          {
+                            "value": "teal"
+                          },
+                          {
+                            "value": "green"
+                          },
+                          {
+                            "value": "lightGreen"
+                          },
+                          {
+                            "value": "lime"
+                          },
+                          {
+                            "value": "yellow"
+                          },
+                          {
+                            "value": "amber"
+                          },
+                          {
+                            "value": "orange"
+                          },
+                          {
+                            "value": "deepOrange"
+                          },
+                          {
+                            "value": "brown"
+                          },
+                          {
+                            "value": "grey"
+                          },
+                          {
+                            "value": "blueGrey"
+                          }
+                        ],
+                        "errors": {}
+                      },
+                      "index": 0
+                    },
+                    {
+                      "key": "node31",
+                      "type": "COMPONENT_PROPERTY_ONE_OF_TYPE",
+                      "props": {
+                        "propertyName": "colorShade",
+                        "propertyComment": "A value from the collection of colors shades",
+                        "propertyValue": "700",
+                        "propertyValueVariants": [
+                          {
+                            "value": "50"
+                          },
+                          {
+                            "value": "100"
+                          },
+                          {
+                            "value": "200"
+                          },
+                          {
+                            "value": "300"
+                          },
+                          {
+                            "value": "400"
+                          },
+                          {
+                            "value": "500"
+                          },
+                          {
+                            "value": "600"
+                          },
+                          {
+                            "value": "700"
+                          },
+                          {
+                            "value": "800"
+                          },
+                          {
+                            "value": "900"
+                          },
+                          {
+                            "value": "A100"
+                          },
+                          {
+                            "value": "A200"
+                          },
+                          {
+                            "value": "A400"
+                          },
+                          {
+                            "value": "A700"
+                          }
+                        ],
+                        "errors": {}
+                      },
+                      "index": 1
+                    }
+                  ]
+                },
+                {
+                  "key": "node32",
+                  "type": "COMPONENT_PROPERTY_SHAPE_TYPE",
+                  "props": {
+                    "propertyName": "light"
+                  },
+                  "index": 2,
+                  "children": [
+                    {
+                      "key": "node33",
+                      "type": "COMPONENT_PROPERTY_ONE_OF_TYPE",
+                      "props": {
+                        "propertyName": "colorHue",
+                        "propertyComment": "A value from the collection of colors, i.e. hues",
+                        "propertyValue": "lightBlue",
+                        "propertyValueVariants": [
+                          {
+                            "value": "red"
+                          },
+                          {
+                            "value": "pink"
+                          },
+                          {
+                            "value": "purple"
+                          },
+                          {
+                            "value": "deepPurple"
+                          },
+                          {
+                            "value": "indigo"
+                          },
+                          {
+                            "value": "blue"
+                          },
+                          {
+                            "value": "lightBlue"
+                          },
+                          {
+                            "value": "cyan"
+                          },
+                          {
+                            "value": "teal"
+                          },
+                          {
+                            "value": "green"
+                          },
+                          {
+                            "value": "lightGreen"
+                          },
+                          {
+                            "value": "lime"
+                          },
+                          {
+                            "value": "yellow"
+                          },
+                          {
+                            "value": "amber"
+                          },
+                          {
+                            "value": "orange"
+                          },
+                          {
+                            "value": "deepOrange"
+                          },
+                          {
+                            "value": "brown"
+                          },
+                          {
+                            "value": "grey"
+                          },
+                          {
+                            "value": "blueGrey"
+                          }
+                        ],
+                        "errors": {}
+                      },
+                      "index": 0
+                    },
+                    {
+                      "key": "node34",
+                      "type": "COMPONENT_PROPERTY_ONE_OF_TYPE",
+                      "props": {
+                        "propertyName": "colorShade",
+                        "propertyComment": "A value from the collection of colors shades",
+                        "propertyValue": "300",
+                        "propertyValueVariants": [
+                          {
+                            "value": "50"
+                          },
+                          {
+                            "value": "100"
+                          },
+                          {
+                            "value": "200"
+                          },
+                          {
+                            "value": "300"
+                          },
+                          {
+                            "value": "400"
+                          },
+                          {
+                            "value": "500"
+                          },
+                          {
+                            "value": "600"
+                          },
+                          {
+                            "value": "700"
+                          },
+                          {
+                            "value": "800"
+                          },
+                          {
+                            "value": "900"
+                          },
+                          {
+                            "value": "A100"
+                          },
+                          {
+                            "value": "A200"
+                          },
+                          {
+                            "value": "A400"
+                          },
+                          {
+                            "value": "A700"
+                          }
+                        ],
+                        "errors": {}
+                      },
+                      "index": 1
+                    }
+                  ]
+                },
+                {
+                  "key": "node35",
+                  "type": "COMPONENT_PROPERTY_SHAPE_TYPE",
+                  "props": {
+                    "propertyName": "main"
+                  },
+                  "index": 3,
+                  "children": [
+                    {
+                      "key": "node36",
+                      "type": "COMPONENT_PROPERTY_ONE_OF_TYPE",
+                      "props": {
+                        "propertyName": "colorHue",
+                        "propertyComment": "A value from the collection of colors, i.e. hues",
+                        "propertyValue": "orange",
+                        "propertyValueVariants": [
+                          {
+                            "value": "red"
+                          },
+                          {
+                            "value": "pink"
+                          },
+                          {
+                            "value": "purple"
+                          },
+                          {
+                            "value": "deepPurple"
+                          },
+                          {
+                            "value": "indigo"
+                          },
+                          {
+                            "value": "blue"
+                          },
+                          {
+                            "value": "lightBlue"
+                          },
+                          {
+                            "value": "cyan"
+                          },
+                          {
+                            "value": "teal"
+                          },
+                          {
+                            "value": "green"
+                          },
+                          {
+                            "value": "lightGreen"
+                          },
+                          {
+                            "value": "lime"
+                          },
+                          {
+                            "value": "yellow"
+                          },
+                          {
+                            "value": "amber"
+                          },
+                          {
+                            "value": "orange"
+                          },
+                          {
+                            "value": "deepOrange"
+                          },
+                          {
+                            "value": "brown"
+                          },
+                          {
+                            "value": "grey"
+                          },
+                          {
+                            "value": "blueGrey"
+                          }
+                        ],
+                        "errors": {}
+                      },
+                      "index": 0
+                    },
+                    {
+                      "key": "node37",
+                      "type": "COMPONENT_PROPERTY_ONE_OF_TYPE",
+                      "props": {
+                        "propertyName": "colorShade",
+                        "propertyComment": "A value from the collection of colors shades",
+                        "propertyValue": "800",
+                        "propertyValueVariants": [
+                          {
+                            "value": "50"
+                          },
+                          {
+                            "value": "100"
+                          },
+                          {
+                            "value": "200"
+                          },
+                          {
+                            "value": "300"
+                          },
+                          {
+                            "value": "400"
+                          },
+                          {
+                            "value": "500"
+                          },
+                          {
+                            "value": "600"
+                          },
+                          {
+                            "value": "700"
+                          },
+                          {
+                            "value": "800"
+                          },
+                          {
+                            "value": "900"
+                          },
+                          {
+                            "value": "A100"
+                          },
+                          {
+                            "value": "A200"
+                          },
+                          {
+                            "value": "A400"
+                          },
+                          {
+                            "value": "A700"
+                          }
+                        ],
+                        "errors": {}
+                      },
+                      "index": 1
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "key": "node38",
+              "type": "COMPONENT_PROPERTY_SHAPE_TYPE",
+              "props": {
+                "propertyName": "secondary"
+              },
+              "index": 2,
+              "children": [
+                {
+                  "key": "node39",
+                  "type": "COMPONENT_PROPERTY_STRING_TYPE",
+                  "props": {
+                    "propertyName": "contrastText",
+                    "propertyValue": "#fff"
+                  },
+                  "index": 0
+                },
+                {
+                  "key": "node40",
+                  "type": "COMPONENT_PROPERTY_SHAPE_TYPE",
+                  "props": {
+                    "propertyName": "dark"
+                  },
+                  "index": 1,
+                  "children": [
+                    {
+                      "key": "node41",
+                      "type": "COMPONENT_PROPERTY_ONE_OF_TYPE",
+                      "props": {
+                        "propertyName": "colorHue",
+                        "propertyComment": "A value from the collection of colors, i.e. hues",
+                        "propertyValue": "indigo",
+                        "propertyValueVariants": [
+                          {
+                            "value": "red"
+                          },
+                          {
+                            "value": "pink"
+                          },
+                          {
+                            "value": "purple"
+                          },
+                          {
+                            "value": "deepPurple"
+                          },
+                          {
+                            "value": "indigo"
+                          },
+                          {
+                            "value": "blue"
+                          },
+                          {
+                            "value": "lightBlue"
+                          },
+                          {
+                            "value": "cyan"
+                          },
+                          {
+                            "value": "teal"
+                          },
+                          {
+                            "value": "green"
+                          },
+                          {
+                            "value": "lightGreen"
+                          },
+                          {
+                            "value": "lime"
+                          },
+                          {
+                            "value": "yellow"
+                          },
+                          {
+                            "value": "amber"
+                          },
+                          {
+                            "value": "orange"
+                          },
+                          {
+                            "value": "deepOrange"
+                          },
+                          {
+                            "value": "brown"
+                          },
+                          {
+                            "value": "grey"
+                          },
+                          {
+                            "value": "blueGrey"
+                          }
+                        ],
+                        "errors": {}
+                      },
+                      "index": 0
+                    },
+                    {
+                      "key": "node42",
+                      "type": "COMPONENT_PROPERTY_ONE_OF_TYPE",
+                      "props": {
+                        "propertyName": "colorShade",
+                        "propertyComment": "A value from the collection of colors shades",
+                        "propertyValue": "A700",
+                        "propertyValueVariants": [
+                          {
+                            "value": "50"
+                          },
+                          {
+                            "value": "100"
+                          },
+                          {
+                            "value": "200"
+                          },
+                          {
+                            "value": "300"
+                          },
+                          {
+                            "value": "400"
+                          },
+                          {
+                            "value": "500"
+                          },
+                          {
+                            "value": "600"
+                          },
+                          {
+                            "value": "700"
+                          },
+                          {
+                            "value": "800"
+                          },
+                          {
+                            "value": "900"
+                          },
+                          {
+                            "value": "A100"
+                          },
+                          {
+                            "value": "A200"
+                          },
+                          {
+                            "value": "A400"
+                          },
+                          {
+                            "value": "A700"
+                          }
+                        ],
+                        "errors": {}
+                      },
+                      "index": 1
+                    }
+                  ]
+                },
+                {
+                  "key": "node43",
+                  "type": "COMPONENT_PROPERTY_SHAPE_TYPE",
+                  "props": {
+                    "propertyName": "light"
+                  },
+                  "index": 2,
+                  "children": [
+                    {
+                      "key": "node44",
+                      "type": "COMPONENT_PROPERTY_ONE_OF_TYPE",
+                      "props": {
+                        "propertyName": "colorHue",
+                        "propertyComment": "A value from the collection of colors, i.e. hues",
+                        "propertyValue": "pink",
+                        "propertyValueVariants": [
+                          {
+                            "value": "red"
+                          },
+                          {
+                            "value": "pink"
+                          },
+                          {
+                            "value": "purple"
+                          },
+                          {
+                            "value": "deepPurple"
+                          },
+                          {
+                            "value": "indigo"
+                          },
+                          {
+                            "value": "blue"
+                          },
+                          {
+                            "value": "lightBlue"
+                          },
+                          {
+                            "value": "cyan"
+                          },
+                          {
+                            "value": "teal"
+                          },
+                          {
+                            "value": "green"
+                          },
+                          {
+                            "value": "lightGreen"
+                          },
+                          {
+                            "value": "lime"
+                          },
+                          {
+                            "value": "yellow"
+                          },
+                          {
+                            "value": "amber"
+                          },
+                          {
+                            "value": "orange"
+                          },
+                          {
+                            "value": "deepOrange"
+                          },
+                          {
+                            "value": "brown"
+                          },
+                          {
+                            "value": "grey"
+                          },
+                          {
+                            "value": "blueGrey"
+                          }
+                        ],
+                        "errors": {}
+                      },
+                      "index": 0
+                    },
+                    {
+                      "key": "node45",
+                      "type": "COMPONENT_PROPERTY_ONE_OF_TYPE",
+                      "props": {
+                        "propertyName": "colorShade",
+                        "propertyComment": "A value from the collection of colors shades",
+                        "propertyValue": "A200",
+                        "propertyValueVariants": [
+                          {
+                            "value": "50"
+                          },
+                          {
+                            "value": "100"
+                          },
+                          {
+                            "value": "200"
+                          },
+                          {
+                            "value": "300"
+                          },
+                          {
+                            "value": "400"
+                          },
+                          {
+                            "value": "500"
+                          },
+                          {
+                            "value": "600"
+                          },
+                          {
+                            "value": "700"
+                          },
+                          {
+                            "value": "800"
+                          },
+                          {
+                            "value": "900"
+                          },
+                          {
+                            "value": "A100"
+                          },
+                          {
+                            "value": "A200"
+                          },
+                          {
+                            "value": "A400"
+                          },
+                          {
+                            "value": "A700"
+                          }
+                        ],
+                        "errors": {}
+                      },
+                      "index": 1
+                    }
+                  ]
+                },
+                {
+                  "key": "node46",
+                  "type": "COMPONENT_PROPERTY_SHAPE_TYPE",
+                  "props": {
+                    "propertyName": "main"
+                  },
+                  "index": 3,
+                  "children": [
+                    {
+                      "key": "node47",
+                      "type": "COMPONENT_PROPERTY_ONE_OF_TYPE",
+                      "props": {
+                        "propertyName": "colorHue",
+                        "propertyComment": "A value from the collection of colors, i.e. hues",
+                        "propertyValue": "blue",
+                        "propertyValueVariants": [
+                          {
+                            "value": "red"
+                          },
+                          {
+                            "value": "pink"
+                          },
+                          {
+                            "value": "purple"
+                          },
+                          {
+                            "value": "deepPurple"
+                          },
+                          {
+                            "value": "indigo"
+                          },
+                          {
+                            "value": "blue"
+                          },
+                          {
+                            "value": "lightBlue"
+                          },
+                          {
+                            "value": "cyan"
+                          },
+                          {
+                            "value": "teal"
+                          },
+                          {
+                            "value": "green"
+                          },
+                          {
+                            "value": "lightGreen"
+                          },
+                          {
+                            "value": "lime"
+                          },
+                          {
+                            "value": "yellow"
+                          },
+                          {
+                            "value": "amber"
+                          },
+                          {
+                            "value": "orange"
+                          },
+                          {
+                            "value": "deepOrange"
+                          },
+                          {
+                            "value": "brown"
+                          },
+                          {
+                            "value": "grey"
+                          },
+                          {
+                            "value": "blueGrey"
+                          }
+                        ],
+                        "errors": {}
+                      },
+                      "index": 0
+                    },
+                    {
+                      "key": "node48",
+                      "type": "COMPONENT_PROPERTY_ONE_OF_TYPE",
+                      "props": {
+                        "propertyName": "colorShade",
+                        "propertyComment": "A value from the collection of colors shades",
+                        "propertyValue": "500",
+                        "propertyValueVariants": [
+                          {
+                            "value": "50"
+                          },
+                          {
+                            "value": "100"
+                          },
+                          {
+                            "value": "200"
+                          },
+                          {
+                            "value": "300"
+                          },
+                          {
+                            "value": "400"
+                          },
+                          {
+                            "value": "500"
+                          },
+                          {
+                            "value": "600"
+                          },
+                          {
+                            "value": "700"
+                          },
+                          {
+                            "value": "800"
+                          },
+                          {
+                            "value": "900"
+                          },
+                          {
+                            "value": "A100"
+                          },
+                          {
+                            "value": "A200"
+                          },
+                          {
+                            "value": "A400"
+                          },
+                          {
+                            "value": "A700"
+                          }
+                        ],
+                        "errors": {}
+                      },
+                      "index": 1
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "key": "node49",
+              "type": "COMPONENT_PROPERTY_ONE_OF_TYPE",
+              "props": {
+                "propertyName": "type",
+                "propertyValue": "light",
+                "propertyValueVariants": [
+                  {
+                    "value": "light"
+                  },
+                  {
+                    "value": "dark"
+                  }
+                ]
+              },
+              "index": 3
+            }
+          ]
+        },
+        {
+          "key": "node50",
+          "type": "COMPONENT_PROPERTY_SHAPE_TYPE",
+          "props": {
+            "propertyName": "zIndex",
+            "propertyComment": "Test"
+          },
+          "index": 2,
+          "children": [
+            {
+              "key": "node51",
+              "type": "COMPONENT_PROPERTY_NUMBER_TYPE",
+              "props": {
+                "propertyName": "appBar",
+                "propertyValue": 1100
+              },
+              "index": 0
+            },
+            {
+              "key": "node52",
+              "type": "COMPONENT_PROPERTY_NUMBER_TYPE",
+              "props": {
+                "propertyName": "drawer",
+                "propertyValue": 1200
+              },
+              "index": 1
+            },
+            {
+              "key": "node53",
+              "type": "COMPONENT_PROPERTY_NUMBER_TYPE",
+              "props": {
+                "propertyName": "mobileStepper",
+                "propertyValue": 1000
+              },
+              "index": 2
+            },
+            {
+              "key": "node54",
+              "type": "COMPONENT_PROPERTY_NUMBER_TYPE",
+              "props": {
+                "propertyName": "modal",
+                "propertyValue": 1300
+              },
+              "index": 3
+            },
+            {
+              "key": "node55",
+              "type": "COMPONENT_PROPERTY_NUMBER_TYPE",
+              "props": {
+                "propertyName": "snackbar",
+                "propertyValue": 1400
+              },
+              "index": 4
+            },
+            {
+              "key": "node56",
+              "type": "COMPONENT_PROPERTY_NUMBER_TYPE",
+              "props": {
+                "propertyName": "speedDial",
+                "propertyValue": 1050
+              },
+              "index": 5
+            },
+            {
+              "key": "node57",
+              "type": "COMPONENT_PROPERTY_NUMBER_TYPE",
+              "props": {
+                "propertyName": "tooltip",
+                "propertyValue": 1500
+              },
+              "index": 6
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "node58",
+      "type": "COMPONENT_PROPERTY_SHAPE_TYPE",
+      "props": {
+        "propertyName": "pageMeta",
+        "propertyComment": "Main page meta data"
+      },
+      "index": 2,
+      "children": [
+        {
+          "key": "node59",
+          "type": "COMPONENT_PROPERTY_STRING_TYPE",
+          "props": {
+            "propertyName": "title",
+            "propertyComment": "Main page title value"
+          },
+          "index": 0
+        }
+      ]
+    }
+  ]
+}

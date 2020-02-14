@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "site": "wcd-boilerplate-pwa-1",
+    "public": "build",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

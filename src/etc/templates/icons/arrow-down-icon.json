@@ -1,0 +1,83 @@
+{
+  "templateName": "arrow-down-icon",
+  "componentsTree": {
+    "key": "node1",
+    "type": "PAGE_COMPONENT_TYPE",
+    "props": {
+      "componentName": "usr.atom.SvgIcon",
+      "componentInstance": "arrowDownIcon",
+      "isSelected": true
+    },
+    "index": 0,
+    "children": [
+      {
+        "key": "node2",
+        "type": "COMPONENT_PROPERTY_ONE_OF_TYPE",
+        "props": {
+          "propertyName": "color"
+        },
+        "index": 0
+      },
+      {
+        "key": "node3",
+        "type": "COMPONENT_PROPERTY_BOOL_TYPE",
+        "props": {
+          "propertyName": "doNotUseInFlows"
+        },
+        "index": 1
+      },
+      {
+        "key": "node4",
+        "type": "COMPONENT_PROPERTY_ONE_OF_TYPE",
+        "props": {
+          "propertyName": "fontSize"
+        },
+        "index": 2
+      },
+      {
+        "key": "node5",
+        "type": "COMPONENT_PROPERTY_ARRAY_OF_TYPE",
+        "props": {
+          "propertyName": "paths"
+        },
+        "index": 3,
+        "children": [
+          {
+            "key": "node9",
+            "type": "COMPONENT_PROPERTY_SHAPE_TYPE",
+            "props": {},
+            "index": 0,
+            "children": [
+              {
+                "key": "node10",
+                "type": "COMPONENT_PROPERTY_STRING_TYPE",
+                "props": {
+                  "propertyName": "d",
+                  "propertyValue": "M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
+                },
+                "index": 0
+              },
+              {
+                "key": "node11",
+                "type": "COMPONENT_PROPERTY_STRING_TYPE",
+                "props": {
+                  "propertyName": "fill"
+                },
+                "index": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "node12",
+        "type": "COMPONENT_PROPERTY_STRING_TYPE",
+        "props": {
+          "propertyName": "viewBox",
+          "propertyValue": "0 0 24 24"
+        },
+        "index": 4
+      }
+    ]
+  }
+}

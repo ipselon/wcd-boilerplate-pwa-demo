@@ -1,0 +1,50 @@
+{
+  "name": "wcd-boilerplate-pwa",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "@material-ui/core": "4.8.0",
+    "@webcodesk/react-app-framework": "2.0.25",
+    "@webcodesk/webcodesk-srv": "2.0.0-beta.7",
+    "axios": "^0.19.2",
+    "cross-env": "6.0.3",
+    "express": "4.17.1",
+    "firebase": "^7.6.2",
+    "highlight.js": "9.16.2",
+    "localforage": "1.7.3",
+    "markdown-it": "10.0.0",
+    "markdown-it-link-attributes": "3.0.0",
+    "prop-types": "15.7.2",
+    "react": "16.11.0",
+    "react-dom": "16.11.0",
+    "react-helmet": "5.2.1",
+    "react-scripts": "3.2.0"
+  },
+  "scripts": {
+    "start": "cross-env PORT=3030 BROWSER=none react-scripts start",
+    "build": "cross-env GENERATE_SOURCEMAP=false react-scripts build && cat src/sw-epilog.js >> build/service-worker.js",
+    "deploy": "firebase deploy --only hosting:wcd-boilerplate-pwa-1",
+    "test": "react-scripts test --modulePaths=src",
+    "eject": "react-scripts eject",
+    "wcd": "webcodesk-srv -p 7070",
+    "server": "node ./server.js"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "wcd": {
+    "appMode": "release"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

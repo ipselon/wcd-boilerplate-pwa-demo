@@ -1,2 +1,2 @@
-# wcd-boilerplate-pwa-demo
-wcd-boilerplate-pwa-demo
+# wcd-boilerplate-pwa
+A PWA boilerplate for Webcodesk
