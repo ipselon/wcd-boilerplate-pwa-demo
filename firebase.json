@@ -1,6 +1,5 @@
 {
   "hosting": {
-    "site": "wcd-boilerplate-pwa-1",
     "public": "build",
     "ignore": [
       "firebase.json",
