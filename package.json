@@ -6,7 +6,7 @@
     "@material-ui/core": "4.8.0",
     "@webcodesk/react-app-framework": "2.0.25",
     "@webcodesk/webcodesk-srv": "2.0.0-beta.7",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "cross-env": "6.0.3",
     "express": "4.17.1",
     "firebase": "^7.6.2",
